@@ -25,7 +25,7 @@ public class Library {
         if (book == null) return "No such book available in library";
         if (book.isAvailable()) {
             book.setStatus("Reserved");
-            return "Enjoy the book";
+            return "Thank You!!Enjoy the book";
         }
         return "Sorry we don't have that book yet.";
     }

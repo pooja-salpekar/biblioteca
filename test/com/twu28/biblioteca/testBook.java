@@ -3,7 +3,7 @@ package com.twu28.biblioteca;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class testBooks {
+public class testBook {
     Book aJavaBook = new Book("Complete Reference To Java","Available");
    @Test
     public void testIfBookIsAvailable(){
@@ -15,9 +15,8 @@ public class testBooks {
       Assert.assertEquals(expectedDetails, aJavaBook.showDetails());
     }
     @Test
-    public void testTheNAmeOfBookIsReturned(){
+    public void testTheNameOfBookIsReturned(){
         String expectedName = "Complete Reference To Java";
         Assert.assertEquals(expectedName, aJavaBook.getName());
     }
-
 }
