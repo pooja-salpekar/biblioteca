@@ -1,4 +1,5 @@
-package com.twu28.biblioteca;
+package com.twu28.biblioteca.dataholders;
+import com.twu28.biblioteca.dataholders.LibraryUser;
 import org.junit.Assert;
 import org.junit.Test;
 

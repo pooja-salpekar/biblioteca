@@ -1,4 +1,4 @@
-package com.twu28.biblioteca;
+package com.twu28.biblioteca.console;
 
 import java.io.IOException;
 

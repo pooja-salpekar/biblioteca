@@ -1,4 +1,7 @@
-package com.twu28.biblioteca;
+package com.twu28.biblioteca.management;
+
+import com.twu28.biblioteca.dataholders.Library;
+import com.twu28.biblioteca.dataholders.LibraryUser;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -8,10 +11,13 @@ public class LibraryManager {
     private Library library;
     private List<String> menuOptions = new ArrayList<String>();
     private List<LibraryUser> users = new ArrayList<LibraryUser>();
+    private MovieManager movieManager;
 
-    public LibraryManager(Library library, List<LibraryUser> users) {
+    public LibraryManager(Library library, List<LibraryUser> users, MovieManager movieManager) {
         this.library = library;
         library.instantiateBookList();
+        this.movieManager=movieManager;
+        movieManager.instantiateMovieList();
         this.users = users;
     }
 
@@ -28,7 +34,8 @@ public class LibraryManager {
         menuOptions.add("1. View Books");
         menuOptions.add("2. Reserve a Book");
         menuOptions.add("3. Check Library Number");
-        menuOptions.add("4. Quit");
+        menuOptions.add("4. View Movies");
+        menuOptions.add("5. Quit");
     }
 
     public String menuDrivenNavigator(int choice) throws IOException {
@@ -40,6 +47,8 @@ public class LibraryManager {
         if (choice == 3) {
             return "Enter your user id";
         }
+        if (choice == 4)
+            return (movieManager.viewMovies());
         return "Invalid Choice!!! Please enter valid choice";
     }
 

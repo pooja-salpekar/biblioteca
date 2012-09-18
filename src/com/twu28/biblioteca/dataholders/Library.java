@@ -1,4 +1,4 @@
-package com.twu28.biblioteca;
+package com.twu28.biblioteca.dataholders;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +32,7 @@ public class Library {
 
     private Book searchBook(String bookName) {
         for (Book book : books) {
-            if (bookName.equals(book.getName())) return book;
+            if (bookName.toLowerCase().equals(book.getName().toLowerCase())) return book;
         }
         return null;
     }

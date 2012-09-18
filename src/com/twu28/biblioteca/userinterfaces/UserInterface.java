@@ -1,4 +1,10 @@
-package com.twu28.biblioteca;
+package com.twu28.biblioteca.userinterfaces;
+
+import com.twu28.biblioteca.console.Console;
+import com.twu28.biblioteca.dataholders.Library;
+import com.twu28.biblioteca.dataholders.LibraryUser;
+import com.twu28.biblioteca.management.LibraryManager;
+import com.twu28.biblioteca.management.MovieManager;
 
 import java.io.IOException;
 import java.util.List;
@@ -8,15 +14,15 @@ public class UserInterface {
     private LibraryManager libraryManager;
 
 
-    public UserInterface(Library library, List<LibraryUser> users) {
-        this.libraryManager = new LibraryManager(library, users);
+    public UserInterface(Library library, List<LibraryUser> users,MovieManager movieManager) {
+        this.libraryManager = new LibraryManager(library, users, movieManager);
     }
 
     public void start(Console console) throws IOException {
         int choice;
         libraryManager.initializeMenu();
         displayOnScreen(console, libraryManager.showMenu());
-        while ((choice = getUserInput(console)) != 4) {
+        while ((choice = getUserInput(console)) != 5) {
             String outputFromLibraryManager = libraryManager.menuDrivenNavigator(choice);
             decideOnOutputFromLibraryManager(console, outputFromLibraryManager);
             displayOnScreen(console, libraryManager.showMenu());

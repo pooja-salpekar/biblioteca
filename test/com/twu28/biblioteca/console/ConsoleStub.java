@@ -1,4 +1,6 @@
-package com.twu28.biblioteca;
+package com.twu28.biblioteca.console;
+
+import com.twu28.biblioteca.console.Console;
 
 import java.io.IOException;
 import java.util.ArrayList;

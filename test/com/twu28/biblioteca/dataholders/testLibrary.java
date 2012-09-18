@@ -1,5 +1,6 @@
-package com.twu28.biblioteca;
+package com.twu28.biblioteca.dataholders;
 
+import com.twu28.biblioteca.dataholders.Library;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -18,7 +19,7 @@ public class testLibrary {
     public void testForReserveBookIfBookIsAvailable()
     {
         library.instantiateBookList();
-        Assert.assertEquals("Enjoy the book", library.reserveBook("Complete Reference To Java"));
+        Assert.assertEquals("Thank You!!Enjoy the book", library.reserveBook("Complete Reference To Java"));
     }
 
     @Test

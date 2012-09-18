@@ -1,4 +1,4 @@
-package com.twu28.biblioteca;
+package com.twu28.biblioteca.dataholders;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -20,5 +20,9 @@ public class LibraryUser {
 
     public String getLibraryNumber() {
         return Long.toString(this.libraryNumber);
+    }
+
+    public static void reset() {
+        libraryAccountNumber=100000;
     }
 }

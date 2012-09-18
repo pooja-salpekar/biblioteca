@@ -1,4 +1,4 @@
-package com.twu28.biblioteca;
+package com.twu28.biblioteca.dataholders;
 
 public class Book {
     private String name;
