@@ -58,5 +58,48 @@ public class testMyArrayList {
         String expectedString ="element6";
         Assert.assertEquals(expectedString,list.getElementFrom(6));
     }
+    @Test
+    public void testIfElementIsDeletedFromGivenIndex(){
+        MyArrayList<String> list = new MyArrayList<String>();
+        list.add("element0");
+        list.add("element1");
+        list.add("element2");
+        list.add("element3");
+        String expectedString = "element2";
+        Assert.assertEquals(expectedString,list.remove(2));
+
+    }
+
+    @Test
+    public void testIfSizeIsReducedOnDeletion(){
+        MyArrayList<String> list = new MyArrayList<String>();
+        list.add("element0");
+        list.add("element1");
+        list.add("element2");
+        list.add("element3");
+        list.remove(2);
+        int expectedSize = 3;
+        Assert.assertEquals(expectedSize,list.showSize());
+
+    }
+
+    @Test
+    public void testIfListContainsGivenElement(){
+        MyArrayList<String>list = new MyArrayList<String>();
+        list.add("element0");
+        list.add("element1");
+        list.add("element2");
+        Assert.assertTrue(list.contains("element2"));
+    }
+
+    @Test
+    public void testIfIndexOfSpecifiedElementIsReturned(){
+        MyArrayList<String>list = new MyArrayList<String>();
+        list.add("element0");
+        list.add("element1");
+        list.add("element2");
+        int expectedIndex=2;
+        Assert.assertEquals(expectedIndex,list.indexOf("element2"));
+    }
 }
 

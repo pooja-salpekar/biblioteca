@@ -14,7 +14,7 @@ public class MyArrayList<T> {
     }
 
     public void add(T element) {
-        if(size==INITIAL_SIZE)
+        if(size==data.length)
             expandTheArray(size);
         data[size]=element;
         size++;
@@ -23,8 +23,8 @@ public class MyArrayList<T> {
     private void expandTheArray(int sizeForExpansion) {
         T temp[] = data;
         data = (T[]) new Object[ 2*sizeForExpansion ] ;
-        for ( int i = 0; i < size; i++ )
-            data[i] = temp[i] ;
+        for ( int counter = 0; counter < size; counter++ )
+            data[counter] = temp[counter] ;
     }
 
     public T getElementFrom(int index) {
@@ -32,11 +32,36 @@ public class MyArrayList<T> {
     }
 
     public void add(int index, T element) {
-        if (index>=INITIAL_SIZE)
-            expandTheArray(INITIAL_SIZE);
+        if (index>=data.length)
+            expandTheArray(data.length);
         for(int counter = index;counter<size;counter++){
             data[counter+1]=data[counter];
         }
         data[index]=element;
+    }
+
+    public T remove(int index) {
+        T temp = data[index];
+        for(int counter=index;counter<size-1;counter++){
+            data[counter]=data[counter+1];
+        }
+        size--;
+        return temp;
+    }
+
+    public boolean contains(T element) {
+        for(int counter=0;counter<size;counter++){
+            if(data[counter].equals(element))
+                return true;
+        }
+        return false;
+    }
+
+    public int indexOf(T element) {
+        for(int counter=0;counter<size;counter++){
+            if(data[counter].equals(element))
+                return counter;
+        }
+        return -1;
     }
 }
