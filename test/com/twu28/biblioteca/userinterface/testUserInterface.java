@@ -15,7 +15,7 @@ import java.util.List;
 public class testUserInterface {
     private UserInterface userInterface;
     @Test
-    public void testforInvalidChoiceEntered() throws IOException {
+    public void testForInvalidChoiceEntered() throws IOException {
         initializeForTests();
         ConsoleStub console = new ConsoleStub();
         console.println("6");
@@ -97,7 +97,6 @@ public class testUserInterface {
 
     private void initializeForTests() {
         List<LibraryUser> users=new ArrayList<LibraryUser>();
-        LibraryUser.reset();
         LibraryUser libraryUser = new LibraryUser(001) ;
         users.add(libraryUser);
         userInterface= new UserInterface(new Library(),users,new MovieManager());

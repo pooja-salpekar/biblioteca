@@ -5,13 +5,12 @@ import java.util.Map;
 
 public class LibraryUser {
     private int id;
-    private static long libraryAccountNumber = 100000;
     private long libraryNumber;
 
 
     public LibraryUser(int userId) {
         this.id = userId;
-        this.libraryNumber = ++libraryAccountNumber;
+        this.libraryNumber = 100000+this.id;
     }
 
     public long getId() {
@@ -22,7 +21,5 @@ public class LibraryUser {
         return Long.toString(this.libraryNumber);
     }
 
-    public static void reset() {
-        libraryAccountNumber=100000;
-    }
+
 }
