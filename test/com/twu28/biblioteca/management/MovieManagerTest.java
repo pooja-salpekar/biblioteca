@@ -3,7 +3,7 @@ package com.twu28.biblioteca.management;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class testMovieManager {
+public class MovieManagerTest {
     @Test
     public void testIfMovieNamesAreToTheList(){
         MovieManager movieManager = new MovieManager();

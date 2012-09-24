@@ -4,7 +4,7 @@ import com.twu28.biblioteca.dataholders.Movie;
 import junit.framework.Assert;
 import org.junit.Test;
 
-public class testMovie {
+public class MovieTest {
     @Test
     public void testIfMovieRatingIsReturned(){
         Movie aMovie= new Movie("Sholey" , "Ramesh Sippy", "8.5");

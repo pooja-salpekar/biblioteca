@@ -4,7 +4,7 @@ package com.twu28.biblioteca.dataholders;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class testLibrary {
+public class LibraryTest {
     Library library = new Library();
     @Test
     public void testForViewOfBookList(){

@@ -3,7 +3,7 @@ package com.twu28.biblioteca.management;
 import junit.framework.Assert;
 import org.junit.Test;
 
-public class testLibraryUserManager {
+public class LibraryUserManagerTest {
 
     @Test
     public void testIfUserWhoIsNotLoggedAsksForUserDetails(){

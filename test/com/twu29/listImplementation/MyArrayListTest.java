@@ -3,7 +3,7 @@ package com.twu29.listImplementation;
 import junit.framework.Assert;
 import org.junit.Test;
 
-public class testMyArrayList {
+public class MyArrayListTest {
     @Test
     public void testIfSizeOfListIsReturned(){
         MyArrayList<Integer> list = new MyArrayList<Integer>();

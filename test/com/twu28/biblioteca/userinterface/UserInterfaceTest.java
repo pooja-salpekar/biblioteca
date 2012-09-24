@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class testUserInterface {
+public class UserInterfaceTest {
     private UserInterface userInterface;
     @Test
     public void testForInvalidChoiceEntered() throws IOException {

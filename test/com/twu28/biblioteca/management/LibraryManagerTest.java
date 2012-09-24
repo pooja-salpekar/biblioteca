@@ -6,7 +6,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 
-public class testLibraryManager {
+public class LibraryManagerTest {
     LibraryManager libraryManager = new LibraryManager(new Library(), new MovieManager());
     @Test
     public void testIfMenuIsDisplayed(){

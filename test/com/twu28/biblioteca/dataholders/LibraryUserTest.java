@@ -2,7 +2,7 @@ package com.twu28.biblioteca.dataholders;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class testLibraryUser {
+public class LibraryUserTest {
     LibraryUser user1 = new LibraryUser("Pooja", "9432100000", "pooja@gmail.com", "111-1111", "password");
     LibraryUser user2 = new LibraryUser("John", "9898980000", "john@gmail.com", "111-1112", "password");
     @Test

@@ -3,7 +3,7 @@ package com.twu28.biblioteca.dataholders;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class testBook {
+public class BookTest {
     Book aJavaBook = new Book("Complete Reference To Java","Available");
    @Test
     public void testIfBookIsAvailable(){
