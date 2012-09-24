@@ -1,6 +1,5 @@
 package com.twu28.biblioteca.dataholders;
 
-import com.twu28.biblioteca.dataholders.Book;
 import org.junit.Assert;
 import org.junit.Test;
 

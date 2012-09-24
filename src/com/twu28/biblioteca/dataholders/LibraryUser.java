@@ -1,25 +1,47 @@
 package com.twu28.biblioteca.dataholders;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class LibraryUser {
-    private int id;
-    private long libraryNumber;
+    private String userId;
+    private String libraryNumber;
+    private String userName;
+    private String emailId;
+    private String password;
+    private String phoneNo;
+    private boolean logged;
 
-
-    public LibraryUser(int userId) {
-        this.id = userId;
-        this.libraryNumber = 100000+this.id;
+    public LibraryUser(String userName, String phoneNo, String email, String userId, String password) {
+        this.userName=userName;
+        this.phoneNo=phoneNo;
+        this.emailId=email;
+        this.userId=userId;
+        this.password=password;
+        this.libraryNumber=userId;
     }
 
-    public long getId() {
-        return this.id;
+    public String getId() {
+        return this.userId;
     }
 
     public String getLibraryNumber() {
-        return Long.toString(this.libraryNumber);
+        return this.libraryNumber;
     }
 
 
+    public String showDetail() {
+        return this.userName+" "+this.phoneNo+" "+this.emailId;
+    }
+
+    public boolean verify(String userName, String password) {
+        if(this.userName.equals(userName) && this.password.equals(password)) return true;
+        return false;
+    }
+
+    public boolean isLoggedIn() {
+        if(this.logged==true) return true;
+        return false;
+    }
+
+    public void login() {
+        this.logged=true;
+    }
 }

@@ -1,24 +1,17 @@
 package com.twu28.biblioteca.management;
 
 import com.twu28.biblioteca.dataholders.Library;
-import com.twu28.biblioteca.dataholders.LibraryUser;
-import com.twu28.biblioteca.management.LibraryManager;
-import com.twu28.biblioteca.management.MovieManager;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class testLibraryManager {
-    private List<LibraryUser> users = new ArrayList<LibraryUser>();
-    private  LibraryUser libraryUser = new LibraryUser(001);
-    LibraryManager libraryManager = new LibraryManager(new Library(),users, new MovieManager());
+    LibraryManager libraryManager = new LibraryManager(new Library(), new MovieManager());
     @Test
     public void testIfMenuIsDisplayed(){
         libraryManager.initializeMenu();
-        String expectedString = "~~~~WELCOME TO BANGALORE PUBLIC LIBRARY SYSTEM~~~\n" +"1. View Books\n" +"2. Reserve a Book\n" +"3. Check Library Number\n" + "4. View Movies\n" +"5. Quit\n";
+        String expectedString = "~~~~WELCOME TO BANGALORE PUBLIC LIBRARY SYSTEM~~~\n" +"1. View Books\n" +"2. Reserve a Book\n" +"3. Show User Details\n" +"4. View Movies\n" +"5. Login\n" +"6. Quit\n";
         Assert.assertEquals(expectedString, libraryManager.showMenu());
     }
 
@@ -42,22 +35,27 @@ public class testLibraryManager {
     }
 
     @Test
-    public void testIfUserInputsInvalidChoiceHeIsNotified() throws IOException {
-        String expectedString="Invalid Choice!!! Please enter valid choice";
+    public void testIfUserInputIsFourMoviesAreDisplayed() throws IOException {
+        String expectedString="Sholey has rating: 8.5\n" +"Taken has rating: 8\n" +"The Dark Knight Rises has rating: 9\n" +"Inception has rating: 7\n" +"Expandable2 has rating: N/A\n";
+        Assert.assertEquals(expectedString, libraryManager.menuDrivenNavigator(4));
+    }
+
+    @Test
+    public void testIfUserInputIsFiveLoginDetailsAreAsked() throws IOException {
+        String expectedString="Enter username and password:";
         Assert.assertEquals(expectedString, libraryManager.menuDrivenNavigator(5));
     }
 
     @Test
-    public void testIfUserGetsHisLibraryNumber(){
-        users.add(libraryUser);
-        String expectedString="100001";
-        Assert.assertEquals(expectedString, libraryManager.showLibraryNumber("001"));
+    public void testIfUserInputsInvalidChoiceHeIsNotified() throws IOException {
+        String expectedString="Invalid Choice!!! Please enter valid choice";
+        Assert.assertEquals(expectedString, libraryManager.menuDrivenNavigator(7));
     }
+
     @Test
-    public void testIfUserGetsErrorMessageIfInvalidIdIsGiven(){
-        users.add(libraryUser);
-        String expectedString="Please Talk To Librarian";
-        Assert.assertEquals(expectedString, libraryManager.showLibraryNumber("002"));
+    public void testIfBookIsReserved(){
+        String expectedString="Thank You!!Enjoy the book";
+        Assert.assertEquals(expectedString, libraryManager.reserveBook("Tdd By Example"));
     }
 
 }
