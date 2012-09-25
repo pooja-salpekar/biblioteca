@@ -18,7 +18,7 @@ import org.junit.runners.Suite;
          MovieTest.class,
          LibraryManagerTest.class,
          MovieManagerTest.class,
-         UserInterfaceTest.class,
+         UserInterfaceTest.class
 
 
 })

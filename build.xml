@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<project name="biblioteca" default="all">
+    <property name="test-dir" location="test"/>
+    <property name="src-dir" location="src"/>
+    <property name="TALK" value="true"/>
+    <path id="classpath.base"/>
+    <path id="classpath.test">
+        <pathelement location="lib/junit-4.10.jar"/>
+        <pathelement location="${test-dir}"/>
+	<pathelement location="$src-dir}"/>
+        <path refid = "classpath.base"/>
+    </path>
+    <target name = "compile-test" depends="clean-compile-test">
+        <javac srcdir="${src-dir}" destdir="${test-dir}" verbose="${TALK}">
+            <classpath refid="classpath.test"/>
+        </javac>
+        <javac srcdir="${test-dir}" verbose="${TALK}">
+            <classpath refid="classpath.test"/>
+        </javac>
+    </target>
+    <target name="clean-compile-test">
+    <delete verbose ="${TALK}">
+    <fileset dir="${test-dir}" includes="**/*.class"/>
+    </delete>
+    </target>
+    <target name="test" depends="compile-test">
+        <junit failureProperty= "test.failure">
+            <classpath refid="classpath.test"/>
+            <formatter type="brief" usefile="false"/>
+	   <batchtest fork="yes">
+           	 <fileset dir="${test-dir}" includes="**/*Test.java"/>
+           </batchtest>
+
+        </junit>
+	<fail message="test failed" if="test.failure"/>
+    </target>
+    <target name="all" depends="test"/>
+    <target name="clean" depends="clean-compile-test"/>
+</project>
