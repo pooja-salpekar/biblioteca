@@ -20,8 +20,8 @@ public class ConsoleStub implements Console {
         return lines.remove(0);
     }
 
-    public String getRequiredDataFromConsole() {
-        return lines.get(lines.size()-2);
+    public boolean isRequiredDataPresentOnConsole(String value) {
+        return lines.contains(value);
     }
 }
 

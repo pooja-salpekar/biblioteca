@@ -3,38 +3,23 @@ package com.twu28.biblioteca.management;
 import com.twu28.biblioteca.dataholders.Library;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class LibraryManager {
     private Library library;
-    private List<String> menuOptions = new ArrayList<String>();
-
     private MovieManager movieManager;
+    private LibraryMenu libraryMenu;
 
     public LibraryManager(Library library, MovieManager movieManager) {
         this.library = library;
+        this.libraryMenu = new LibraryMenu();
         library.instantiateBookList();
-        this.movieManager=movieManager;
+        this.movieManager = movieManager;
         movieManager.instantiateMovieList();
     }
 
-    public String showMenu() {
-        String menuFields = "";
-        for (String menuOption : menuOptions) {
-            menuFields = menuFields + menuOption + "\n";
-        }
-        return menuFields;
-    }
-
-    public void initializeMenu() {
-        menuOptions.add("~~~~WELCOME TO BANGALORE PUBLIC LIBRARY SYSTEM~~~");
-        menuOptions.add("1. View Books");
-        menuOptions.add("2. Reserve a Book");
-        menuOptions.add("3. Show User Details");
-        menuOptions.add("4. View Movies");
-        menuOptions.add("5. Login");
-        menuOptions.add("6. Quit");
+    public List<String> getMenuItems() {
+        return libraryMenu.getItems();
     }
 
     public String menuDrivenNavigator(int choice) throws IOException {

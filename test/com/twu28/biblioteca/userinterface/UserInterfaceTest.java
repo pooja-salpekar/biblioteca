@@ -23,7 +23,7 @@ public class UserInterfaceTest {
         console.println("6");
         userInterface.start();
         String expectedString = "Invalid Choice!!! Please enter valid choice";
-        Assert.assertEquals(expectedString, console.getRequiredDataFromConsole());
+        Assert.assertTrue(console.isRequiredDataPresentOnConsole(expectedString));
     }
 
     @Test
@@ -34,7 +34,7 @@ public class UserInterfaceTest {
         console.println("6");
         userInterface.start();
         String expectedString = "Complete Reference To Java Available\n" + "Head First Java Available\n" + "TDD By Example Available\n";
-        Assert.assertEquals(expectedString, console.getRequiredDataFromConsole());
+        Assert.assertTrue(console.isRequiredDataPresentOnConsole(expectedString));
     }
     @Test
     public void testForUserWhoIsNotLoggedInInputTwo() throws IOException {
@@ -46,7 +46,7 @@ public class UserInterfaceTest {
         console.println("6");
         userInterface.start();
         String expectedString = "You Are Not logged in.. Please login to reserve the book";
-        Assert.assertEquals(expectedString, console.getRequiredDataFromConsole());
+        Assert.assertTrue(console.isRequiredDataPresentOnConsole(expectedString));
     }
 
     @Test
@@ -62,7 +62,7 @@ public class UserInterfaceTest {
         console.println("6");
         userInterface.start();
         String expectedString = "Thank You!!Enjoy the book";
-        Assert.assertEquals(expectedString, console.getRequiredDataFromConsole());
+        Assert.assertTrue(console.isRequiredDataPresentOnConsole(expectedString));
     }
 
     @Test
@@ -81,7 +81,7 @@ public class UserInterfaceTest {
         console.println("6");
         userInterface.start();
         String expectedString = "Sorry we don't have that book yet.";
-        Assert.assertEquals(expectedString, console.getRequiredDataFromConsole());
+        Assert.assertTrue(console.isRequiredDataPresentOnConsole(expectedString));
     }
 
     @Test
@@ -97,7 +97,7 @@ public class UserInterfaceTest {
         console.println("6");
         userInterface.start();
         String expectedString = "No such book available in library";
-        Assert.assertEquals(expectedString, console.getRequiredDataFromConsole());
+        Assert.assertTrue(console.isRequiredDataPresentOnConsole(expectedString));
     }
 
     @Test
@@ -108,7 +108,7 @@ public class UserInterfaceTest {
         console.println("6");
         userInterface.start();
         String expectedString = "Sholey has rating: 8.5\n" + "Taken has rating: 8\n" + "The Dark Knight Rises has rating: 9\n" + "Inception has rating: 7\n" + "Expandable2 has rating: N/A\n";
-        Assert.assertEquals(expectedString,console.getRequiredDataFromConsole());
+        Assert.assertTrue(console.isRequiredDataPresentOnConsole(expectedString));
     }
 
     private void initializeForTests(ConsoleStub console) {

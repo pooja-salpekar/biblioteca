@@ -7,6 +7,7 @@ import com.twu28.biblioteca.management.LibraryUserManager;
 import com.twu28.biblioteca.management.MovieManager;
 
 import java.io.IOException;
+import java.util.List;
 
 public class UserInterface {
 
@@ -22,12 +23,11 @@ public class UserInterface {
 
     public void start() throws IOException {
         int choice;
-        libraryManager.initializeMenu();
-        displayOnScreen(libraryManager.showMenu());
+        displayOnScreen(libraryManager.getMenuItems());
         while ((choice = getUserInput()) != 6) {
             String outputFromLibraryManager = libraryManager.menuDrivenNavigator(choice);
             decideOnOutputFromLibraryManager( outputFromLibraryManager);
-            displayOnScreen(libraryManager.showMenu());
+            displayOnScreen(libraryManager.getMenuItems());
         }
     }
 
@@ -84,12 +84,15 @@ public class UserInterface {
         console.println(textToBePrinted);
     }
 
+    private void displayOnScreen(List<String> items) {
+        for (String item : items) {
+            displayOnScreen(item);
+        }
+    }
 
     private Integer getUserInput() throws IOException {
         String userChoice;
         userChoice = console.takeInput();
         return Integer.parseInt(userChoice);
     }
-
-
 }
